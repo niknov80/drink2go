@@ -1,0 +1,20 @@
+.filter__fieldset {
+  border: none;
+}
+
+.filter__caption {
+  font-weight: 600;
+}
+
+.filter__input {
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  letter-spacing: inherit;
+  font-weight: 500;
+  color: var(--color-base-black);
+
+  &::placeholder {
+    color: var(--color-base-grey);
+  }
+}

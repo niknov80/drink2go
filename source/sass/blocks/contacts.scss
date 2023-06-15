@@ -1,0 +1,21 @@
+.contacts__caption {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: var(--color-base-primary);
+}
+
+.contacts__text {
+  font-size: 14px;
+  line-height: 20px;
+
+  &--address {
+    font-style: normal;
+  }
+
+  &--phone {
+    text-decoration: none;
+    color: var(--color-base-black);
+  }
+}

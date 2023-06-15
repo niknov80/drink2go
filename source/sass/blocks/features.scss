@@ -1,0 +1,9 @@
+@use "../global/breakpoints" as *;
+
+.features__list {
+  padding-left: 0;
+}
+
+.features__item {
+  list-style-type: none;
+}

@@ -1,0 +1,22 @@
+/* здесь используйте глобальные селекторы img, body, html и так далее*/
+@use "./breakpoints" as *;
+body {
+  font-family: montserrat, arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: var(--color-base-black);
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+html { height: 100%; }
+
+img {
+  max-width: 100%;
+  object-fit: contain;
+}

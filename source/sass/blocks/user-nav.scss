@@ -1,0 +1,120 @@
+@use "../global/breakpoints" as *;
+
+.user-nav {
+  padding-left: 0;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  justify-content: end;
+
+  @media (min-width: $desktop-width) {
+    gap: 20px;
+  }
+}
+
+.user-nav__item {
+  list-style-type: none;
+
+  &--button {
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+  }
+}
+
+.user-nav__link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: var(--color-base-black);
+  text-align: center;
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: auto;
+    gap: 8px;
+  }
+
+  &:hover {
+    background-color: var(--color-base-secondary);
+
+    @media (min-width: $tablet-width) {
+      background-color: var(--color-base-white);
+      color: var(--color-base-primary);
+    }
+  }
+
+  &:focus {
+    outline: none;
+    background-color: var(--color-base-secondary);
+
+    @media (min-width: $tablet-width) {
+      background-color: var(--color-base-white);
+      color: var(--color-base-primary);
+    }
+  }
+
+  &:active {
+    background-color: var(--color-base-secondary);
+
+    @media (min-width: $tablet-width) {
+      background-color: var(--color-base-secondary);
+      color: var(--color-base-primary);
+    }
+  }
+}
+
+.user-nav__text {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: inline;
+  }
+}
+
+.user-nav__button {
+  display: block;
+  width: 60px;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  background-image: url("../../img/common/cross.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-base-secondary);
+  }
+
+  &:focus {
+    outline: none;
+    background-color: var(--color-base-secondary);
+  }
+
+  &:active {
+    background-color: var(--color-base-secondary);
+  }
+}
+
+.main-nav--closed .user-nav__button {
+  background-image: url("../../img/common/burger.svg");
+}
+
+.no-js .user-nav__item--button {
+  display: none;
+}
+

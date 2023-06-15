@@ -1,0 +1,29 @@
+@use "../global/breakpoints" as *;
+.slider__title {
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+
+  @media (min-width: $tablet-width) {
+    font-size: 56px;
+    line-height: 80px;
+  }
+}
+
+.slider__list {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.slider__item {
+  list-style-type: none;
+}
+
+.slider__old-price {
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--color-base-primary);
+}
+

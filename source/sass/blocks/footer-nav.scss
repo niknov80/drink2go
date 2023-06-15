@@ -1,0 +1,25 @@
+.footer-nav__caption {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: var(--color-base-primary);
+}
+
+.footer-nav__list {
+  padding-left: 0;
+}
+
+.footer-nav__item {
+  list-style-type: none;
+}
+
+.footer-nav__link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: var(--color-base-black);
+}

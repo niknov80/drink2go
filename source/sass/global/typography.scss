@@ -1,0 +1,43 @@
+@use "../global/breakpoints" as *;
+
+.badge {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-base-primary);
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+
+  @media (min-width: $tablet-width) {
+    font-size: 42px;
+    line-height: 64px;
+  }
+}
+
+.subtitle {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 700;
+
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.small-text {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.price {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600;
+}

@@ -1,0 +1,25 @@
+.pagination__link {
+  box-sizing: border-box;
+  display: inline-flex;
+  text-decoration: none;
+  color: var(--color-base-primary);
+  background-color: var(--color-base-white);
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+
+  &--current {
+    background-color: transparent;
+    color: var(--color-base-black);
+    font-weight: 600;
+  }
+
+  &--button {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &--page {
+    width: 40px;
+  }
+}
