@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <title>Интернет-магазин кофейных напитков</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="page__body">
+
 <header class="header">
   <nav class="main-nav no-js">
     <a class="main-nav__logo logo" href="#">
@@ -53,96 +55,101 @@
     </ul>
   </nav>
 </header>
+
 <main class="page__main">
   <h1 class="visually-hidden">Интернет-магазин кофейных напитков</h1>
   <section class="news">
     <h2 class="visually-hidden">Попробуйте наши новинки</h2>
-    <div class="slider">
-      <ul class="slider__list">
-        <li class="slider__item slider__item--current">
-          <strong class="slider__badge badge">Новинка!</strong>
-          <h3 class="slider__title">Декаф Флэт Уайт</h3>
-          <picture>
-            <source width="600" height="600" media="(min-width: 1140px)" srcset="img/content/flat-white-desktop@1x.png">
-            <source width="476" height="476" media="(min-width: 768px)" srcset="img/content/flat-white-tablet@1x.png">
-            <img width="280" height="280" src="img/content/flat-white-mobile@1x.png" alt="Банка кофе Decafe Flat White">
-          </picture>
-          <p class="slider__description">Свежесваренный кофе без кофеина из&nbsp;Эфиопии с&nbsp;натуральным фермерским
-            молоком&nbsp;&mdash; то, что нужно для расслабления после тяжёлого рабочего дня</p>
-          <s class="slider__old-price">295₽</s>
-          <b class="slider__price price">225₽</b>
-          <a class="slider__button button button--primary" href="#">Заказать</a>
-        </li>
-        <li class="slider__item">
-          <strong class="slider__badge badge">Новинка!</strong>
-          <h3 class="slider__title">Лавандовый Латте</h3>
-          <picture>
-            <source width="600" height="600" media="(min-width: 1140px)" srcset="img/content/lavander-latte-desktop@1x.png">
-            <source width="476" height="476" media="(min-width: 768px)" srcset="img/content/lavander-latte-tablet@1x.png">
-            <img width="280" height="280" src="img/content/lavander-latte-mobile@1x.png" alt="Банка кофе Decafe Flat White">
-          </picture>
-          <p class="slider__description">Невероятное сочетание перуанской высокогорной арабики с&nbsp;молоком ламы и&nbsp;лавандовым
-            сиропом унесёт вас прямо на&nbsp;вершину Радужных гор</p>
-          <s class="slider__old-price">285₽</s>
-          <b class="slider__price price">265₽</b>
-          <a class="slider__button button button--primary" href="#">Заказать</a>
-        </li>
-        <li class="slider__item">
-          <strong class="slider__badge badge">Новинка!</strong>
-          <h3 class="slider__title">Тройной Эспрессо</h3>
-          <picture>
-            <source width="600" height="600" media="(min-width: 1140px)" srcset="img/content/triple-espresso-desktop@1x.png">
-            <source width="476" height="476" media="(min-width: 768px)" srcset="img/content/triple-espresso-tablet@1x.png">
-            <img width="280" height="280" src="img/content/triple-espresso-mobile@1x.png" alt="Банка кофе Decafe Flat White">
-          </picture>
-          <p class="slider__description">Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из&nbsp;Колумбии
-            покажет вам, что такое настоящая бодрость</p>
-          <s class="slider__old-price">295₽</s>
-          <b class="slider__price price">225₽</b>
-          <a class="slider__button button button--primary" href="#">Заказать</a>
-        </li>
-      </ul>
-      <button class="slider__arrow slider__arrow--back" type="button">
-        <span class="visually-hidden">Назад</span>
-        <svg width="11" height="20" viewBox="0 0 11 20" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.717 0 11 1.32 2.567 10 11 18.68 9.717 20 0 10 9.717 0Z"/>
-        </svg>
-      </button>
-      <button class="slider__arrow slider__arrow--forward" type="button">
-        <span class="visually-hidden">Вперед</span>
-        <svg width="11" height="20" viewBox="0 0 11 20" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M1.283 20 0 18.68 8.433 10 0 1.32 1.283 0 11 10 1.283 20Z"/>
-        </svg>
-      </button>
-      <div class="slider__dots dots">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="slider__item slider__item--first">
+            <strong class="slider__badge badge">Новинка!</strong>
+            <h3 class="slider__title">Декаф Флэт Уайт</h3>
+            <picture class="slider__picture">
+              <source width="600" height="600" media="(min-width: 1140px)" srcset="img/content/flat-white-desktop@1x.png">
+              <source width="476" height="476" media="(min-width: 768px)" srcset="img/content/flat-white-tablet@1x.png">
+              <img class="slider__img" width="280" height="280" src="img/content/flat-white-mobile@1x.png" alt="Банка кофе Decafe Flat White">
+            </picture>
+            <p class="slider__description">Свежесваренный кофе без кофеина из&nbsp;Эфиопии с&nbsp;натуральным фермерским
+              молоком&nbsp;&mdash; то, что нужно для расслабления после тяжёлого рабочего дня</p>
+            <div class="slider__block">
+              <s class="slider__old-price">295₽</s>
+              <b class="slider__price price">225₽</b>
+            </div>
+            <a class="slider__button button button--primary" href="#">Заказать</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slider__item slider__item--second">
+            <strong class="slider__badge badge">Новинка!</strong>
+            <h3 class="slider__title">Лавандовый Латте</h3>
+            <picture class="slider__picture">
+              <source width="600" height="600" media="(min-width: 1140px)" srcset="img/content/lavander-latte-desktop@1x.png">
+              <source width="476" height="476" media="(min-width: 768px)" srcset="img/content/lavander-latte-tablet@1x.png">
+              <img class="slider__img" width="280" height="280" src="img/content/lavander-latte-mobile@1x.png" alt="Банка кофе Decafe Flat White">
+            </picture>
+            <p class="slider__description">Невероятное сочетание перуанской высокогорной арабики с&nbsp;молоком ламы и&nbsp;лавандовым
+              сиропом унесёт вас прямо на&nbsp;вершину Радужных гор</p>
+            <div class="slider__block">
+              <s class="slider__old-price">285₽</s>
+              <b class="slider__price price">265₽</b>
+            </div>
+            <a class="slider__button button button--primary" href="#">Заказать</a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slider__item slider__item--third ">
+            <strong class="slider__badge badge">Новинка!</strong>
+            <h3 class="slider__title">Тройной Эспрессо</h3>
+            <picture class="slider__picture">
+              <source width="600" height="600" media="(min-width: 1140px)" srcset="img/content/triple-espresso-desktop@1x.png">
+              <source width="476" height="476" media="(min-width: 768px)" srcset="img/content/triple-espresso-tablet@1x.png">
+              <img class="slider__img" width="280" height="280" src="img/content/triple-espresso-mobile@1x.png" alt="Банка кофе Decafe Flat White">
+            </picture>
+            <p class="slider__description">Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из&nbsp;Колумбии
+              покажет вам, что такое настоящая бодрость</p>
+            <div class="slider__block">
+              <s class="slider__old-price">295₽</s>
+              <b class="slider__price price">225₽</b>
+            </div>
+            <a class="slider__button button button--primary" href="#">Заказать</a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination slider__dots dots">
         <button class="dots__item dots__item--current"><span class="visually-hidden">1 слайд</span></button>
         <button class="dots__item"><span class="visually-hidden">2 слайд</span></button>
         <button class="dots__item"><span class="visually-hidden">3 слайд</span></button>
       </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
   </section>
+
   <section class="features">
     <strong class="features__badge badge">Преимущества</strong>
     <h2 class="features__title title">Главные причины выбрать Drink2Go</h2>
     <ul class="features__list">
-      <li class="features__item">
+      <li class="features__item features__item--speed">
         <h3 class="features__subtitle subtitle">Скорость</h3>
         <p class="features__text">Готовый напиток всегда под рукой&nbsp;&mdash; просто открой банку</p>
       </li>
-      <li class="features__item">
+      <li class="features__item features__item--comfort">
         <h3 class="features__subtitle subtitle">Удобство</h3>
         <p class="features__text">Легко помещается и&nbsp;в&nbsp;карман, и&nbsp;в&nbsp;маленькую сумочку</p>
       </li>
-      <li class="features__item">
+      <li class="features__item features__item--energy">
         <h3 class="features__subtitle subtitle">Бодрость</h3>
         <p class="features__text">Сбалансированная доза кофеина даст мощный заряд энергии</p>
       </li>
-      <li class="features__item">
+      <li class="features__item features__item--eco">
         <h3 class="features__subtitle subtitle">Экологичность</h3>
         <p class="features__text">Вся упаковка сделана из&nbsp;перерабатываемых материалов</p>
       </li>
     </ul>
   </section>
+
   <section class="catalog">
     <strong class="catalog__badge badge">Каталог</strong>
     <h2 class="catalog__title title">Каталог кофейных напитков</h2>
@@ -307,7 +314,9 @@
       <a class="pagination__link pagination__link--button" href="#">Вперед</a>
     </div>
   </section>
+
   <section class="map">
+    <h2 class="visually-hidden">Как до нас добраться</h2>
     <div class="map__wrapper">
       <iframe class="map__frame" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d593.6618082426967!2d30.316710902928087!3d59.96810446570689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1686744767817!5m2!1sru!2sru"
         allowfullscreen
@@ -315,7 +324,9 @@
       </iframe>
     </div>
   </section>
+
 </main>
+
 <footer class="page__footer footer">
   <a class="footer__logo logo" href="#">
     <picture>
@@ -387,6 +398,7 @@
   </div>
 </footer>
 
-<script type="module" src="./js/script.js" defer></script>
+<script  src="vendor/swiper/swiper-bundle.min.js"></script>
+<script type="module" src="./js/script.js"></script>
 </body>
 </html>
