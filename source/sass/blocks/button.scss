@@ -9,6 +9,8 @@
   line-height: 24px;
   padding: 8px 20px;
   border-radius: 4px;
+  justify-content: center;
+  align-items: center;
 
   &--primary {
     color: var(--color-base-white);
@@ -22,6 +24,7 @@
 
   &--lg {
     display: flex;
+    width: 100%;
   }
 }
 

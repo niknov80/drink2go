@@ -1,3 +1,13 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.pagination__pages {
+  display: contents;
+}
+
 .pagination__link {
   box-sizing: border-box;
   display: inline-flex;
