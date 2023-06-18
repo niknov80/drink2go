@@ -1,3 +1,5 @@
+@use "../global/breakpoints" as *;
+
 .swiper {
   display: flex;
   //max-width: 320px;
@@ -12,4 +14,37 @@
 
 .swiper-slide {
   //display: flex;
+}
+
+.swiper-button-next {
+  right: 0;
+
+  @media (min-width: $tablet-width) {
+    top: 38%;
+    right: 25px;
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 56%;
+  }
+}
+
+.swiper-button-prev {
+  left: 0;
+
+  @media (min-width: $tablet-width) {
+    top: 38%;
+    left: 25px;
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 56%;
+  }
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+  line-height: 20px;
+  color: var(--color-base-primary)
 }

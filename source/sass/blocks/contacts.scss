@@ -1,12 +1,30 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 12px;
+}
+
+.contacts__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .contacts__caption {
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.02em;
   color: var(--color-base-primary);
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .contacts__text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 14px;
   line-height: 20px;
 

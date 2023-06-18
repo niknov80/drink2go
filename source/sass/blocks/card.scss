@@ -1,3 +1,31 @@
 .card {
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
   background-color: var(--color-base-white);
+  padding: 20px;
+  align-items: center;
+}
+
+.card__title {
+  grid-column: 1 / 3;
+  margin-top: 0;
+}
+
+.card__picture {
+  grid-column: 1 / 3;
+  text-align: center;
+  order: -1;
+}
+
+.card__description {
+  grid-column: 1 / 3;
+  margin-top: 0;
+}
+
+.card__price {
+  grid-column: 1 / 2;
+}
+
+.card__button {
+  grid-column: 2 / 3;
 }

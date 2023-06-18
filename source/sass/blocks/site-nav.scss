@@ -14,6 +14,11 @@
     flex-direction: row;
     border-top: none;
   }
+
+  @media (min-width: $desktop-width) {
+    gap: 20px;
+    margin-right: auto;
+  }
 }
 
 .site-nav__item {

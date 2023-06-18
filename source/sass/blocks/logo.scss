@@ -1,0 +1,21 @@
+@use "../global/breakpoints" as *;
+
+.logo {
+  display: grid;
+  grid-template-columns: 170px 130px;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.logo__img {
+
+}
+
+.logo__wordmark {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    width: 180px;
+  }
+}
