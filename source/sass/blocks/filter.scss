@@ -1,3 +1,28 @@
+@use "../global/breakpoints" as *;
+
+.filter {
+  width: 100%;
+  margin-bottom: 45px;
+}
+
+.filter__form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: flex;
+    row-gap: 35px;
+  }
+}
+
 .filter__fieldset {
   border: none;
   margin: 0;
@@ -8,6 +33,11 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 15px;
+  }
 }
 
 .filter__label {
@@ -24,6 +54,14 @@
   color: var(--color-base-black);
   appearance: textfield;
   max-width: 115px;
+
+  @media (min-width: $tablet-width) {
+    max-width: 85px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 135px;
+  }
 
   &::placeholder {
     color: var(--color-base-grey);
@@ -42,9 +80,13 @@
   }
 }
 
-.filter__range--divider {
+.filter__range-divider {
   width: 45px;
   text-align: center;
+
+  @media (min-width: $tablet-width) {
+    width: 50px;
+  }
 }
 
 .filter__item {
@@ -61,7 +103,11 @@
   background-color: var(--color-alt-light-grey);
   width: 100%;
   margin-top: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 37px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 30px;
+  }
 }
 
 .filter__range-bar {
@@ -82,30 +128,33 @@
   top: -10px;
 }
 
-.filter__range-toggle:hover {
-  opacity: 0.5;
-}
-
-.filter__range-toggle:focus {
-  opacity: 1;
-  outline: none;
-}
-
-.filter__range-toggle:focus::before {
+.filter__range-toggle::before {
   content: "";
   display: block;
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 2px #af4fff;
+  border-radius: 50%;
 }
 
-.filter__range-toggle:active {
-  opacity: 1;
-  background-color: #000000;
+.filter__range-toggle:hover::before {
+  background-color: var(--color-alt-primary-opacity-25);
+}
+
+.filter__range-toggle:focus::before {
+  outline: none;
+  background-color: var(--color-alt-primary-opacity-25);
+}
+
+.filter__range-toggle:active::before {
+  background-color: var(--color-base-primary);
+}
+
+.filter__range-toggle:disabled::before {
+  background-color: var(--color-base-grey);
 }
 
 .filter__range-toggle--min {
@@ -124,7 +173,7 @@
 .filter__wrapper {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .filter__mark {
@@ -140,7 +189,6 @@
     border-radius: 50%;
     width: 24px;
     background-color: var(--color-base-white);
-
   }
 
   &--checkbox {
@@ -170,8 +218,72 @@
   border-radius: 50%;
 }
 
+.filter__radio:checked:disabled + .filter__mark--radio::before {
+  background-color: var(--color-alt-light-grey);
+}
+
+.filter__radio:disabled + .filter__mark--radio {
+  border-color: var(--color-alt-light-grey);
+}
+
+.filter__radio:disabled ~ .filter__text-label {
+  color: var(--color-base-grey);
+}
+
+.filter__radio:checked:disabled ~ .filter__text-label {
+  color: var(--color-base-grey);
+}
+
 .filter__checkbox:checked + .filter__mark--checkbox {
   justify-content: end;
   background-color: var(--color-base-primary);
   border: 2px solid var(--color-base-primary);
+}
+
+.filter__checkbox:disabled + .filter__mark--checkbox {
+  background-color: var(--color-alt-light-grey);
+  border-color: var(--color-alt-light-grey);
+}
+
+.filter__checkbox:disabled ~ .filter__text-label {
+  color: var(--color-base-grey);
+}
+
+.filter__checkbox:checked:disabled + .filter__mark--checkbox::before {
+  background-color: var(--color-base-grey);
+}
+
+.filter__block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    grid-column: 1 / 4;
+    justify-self: center;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 40px;
+  }
+}
+
+.filter__button {
+  flex-grow: 1;
+}
+
+.filter__fieldset--disable {
+  & .filter__range-bar {
+    background-color: var(--color-base-grey);
+  }
+
+  & .filter__range-toggle {
+    border-color: var(--color-base-grey);
+  }
+
+  & .filter__input {
+    border-color: var(--color-base-grey);
+    color: var(--color-base-grey);
+  }
 }

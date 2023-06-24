@@ -1,7 +1,8 @@
 /* здесь используйте глобальные селекторы img, body, html и так далее*/
 @use "./breakpoints" as *;
+
 body {
-  font-family: montserrat, arial, sans-serif;
+  font-family: "montserrat", "arial", sans-serif;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0;
@@ -14,7 +15,9 @@ body {
   }
 }
 
-html { height: 100%; }
+html {
+  height: 100%;
+}
 
 img {
   max-width: 100%;

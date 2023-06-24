@@ -1,13 +1,24 @@
+@use "../global/breakpoints" as *;
+
 .sort {
   display: flex;
-  gap: 8px;
+  gap: 20px;
   justify-content: start;
   width: 100%;
+  align-items: center;
+
+  @media (min-width: $tablet-width) {
+    justify-content: end;
+    margin-right: 25px;
+  }
 }
 
 .sort__title {
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
 }
 
 .sort__list {
@@ -15,26 +26,97 @@
   margin-top: 0;
   margin-bottom: 0;
   cursor: pointer;
-
 }
 
 .sort__item {
   list-style-type: none;
+  width: 100%;
+
+  &--init {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 5px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: var(--color-base-primary);
+
+    &::after {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 6px;
+      background-image: url("../../img/common/dropdown-close.svg");
+    }
+
+    &:hover::after {
+      background-image: url("../../img/common/dropdown-open.svg");
+    }
+  }
 }
 
-.sort__item:not(.sort__item--init) {
+.sort__dropdown {
   display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  flex-direction: column;
+  padding-left: 0;
+  width: 200px;
+  background: var(--color-base-white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
+
+.sort__item--init:hover .sort__dropdown {
+  display: flex;
+}
+
+.sort__item--init:focus .sort__dropdown {
+  display: flex;
+}
+
+.sort__item--init:focus-within .sort__dropdown {
+  display: flex;
+}
+
+.sort__item--init:active .sort__dropdown {
+  display: flex;
+}
+
 
 .sort__link {
   text-decoration: none;
+  display: block;
   font-size: 16px;
   line-height: 24px;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--color-base-primary);
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 20px;
+  border-bottom: 1px solid var(--color-base-secondary);
+
+  &:hover {
+    background-color: var(--color-base-secondary);
+    color: var(--color-base-black);
+  }
+
+  &:focus {
+    outline: none;
+    background-color: var(--color-base-secondary);
+    color: var(--color-base-black);
+  }
+
+  &:active {
+    background-color: var(--color-base-primary);
+    color: var(--color-base-white);
+  }
 }
 
+
 .sort__link--current {
-  background-color: var(--color-alt-primary-lighter);
+  background-color: var(--color-base-primary);
   color: var(--color-base-white);
 }

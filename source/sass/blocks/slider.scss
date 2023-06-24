@@ -1,29 +1,38 @@
 @use "../global/breakpoints" as *;
 
-.slider__title {
-  font-size: 36px;
-  line-height: 48px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+.slider {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(to bottom, var(--color-bg-flat-white) 0%, var(--color-bg-flat-white) 100%);
 
   @media (min-width: $tablet-width) {
-    font-size: 56px;
-    line-height: 80px;
+    background: linear-gradient(to bottom, var(--color-bg-flat-white) 0%, var(--color-bg-flat-white) 76%, var(--color-base-white) 76%, var(--color-base-white) 100%);
+  }
+
+  @media (min-width: $desktop-width) {
+    background: linear-gradient(to bottom, var(--color-bg-flat-white) 0%, var(--color-bg-flat-white) 100%);
   }
 }
 
-.slider__list {
-  //box-sizing: border-box;
-  ////overflow: hidden;
-  //display: flex;
-  //padding-left: 0;
-  //margin-top: 0;
-  //margin-bottom: 0;
-  //overflow: hidden;
+.slider__wrapper {
+  display: flex;
+  width: $mobile-width;
+  overflow: hidden;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    width: $tablet-width;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: $desktop-width;
+  }
 }
 
 .slider__item {
+  box-sizing: border-box;
   display: grid;
+  min-width: 100%;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   padding: 20px 20px 60px;
@@ -37,29 +46,12 @@
     grid-template-columns: 50% min-content 1fr;
     grid-template-rows: min-content min-content min-content 1fr;
     padding-top: 10px;
+    padding-bottom: 70px;
   }
 
-  &--first {
-    background-color: var(--color-bg-flat-white);
-
-    @media (min-width: $tablet-width) {
-      background: linear-gradient(to bottom, var(--color-bg-flat-white) 0%, var(--color-bg-flat-white) 76%, var(--color-base-white) 76%, var(--color-base-white) 100%);
-    }
-
-    @media (min-width: $desktop-width) {
-      background: linear-gradient(to bottom, var(--color-bg-flat-white) 0%, var(--color-bg-flat-white) 100%);
-    }
+  &--current {
+    order: -1;
   }
-
-  &--second {
-    background-color: var(--color-bg-lavende-latte);
-  }
-
-  &--third {
-    background-color: var(--color-bg-espresso);
-  }
-
-
 }
 
 .slider__badge {
@@ -77,6 +69,10 @@
 }
 
 .slider__title {
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   grid-column: 1 / 4;
   text-align: center;
   margin-top: 0;
@@ -84,6 +80,8 @@
 
   @media (min-width: $tablet-width) {
     margin-bottom: 15px;
+    font-size: 56px;
+    line-height: 80px;
   }
 
   @media (min-width: $desktop-width) {
@@ -165,4 +163,56 @@
 
 .slider__dots {
   display: none;
+}
+
+.slider__arrow {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  box-sizing: border-box;
+  position: absolute;
+  width: 80px;
+  top: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.slider__arrow--prev {
+  background-image: url("../../img/common/slider-arrow-left.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  left: 0;
+
+  &:hover {
+    background-image: linear-gradient(90deg, var(--color-base-white) 0%, rgba(255, 255, 255, 0) 100%), url("../../img/common/slider-arrow-left.svg");
+  }
+
+  &:focus {
+    outline: none;
+    background-image: linear-gradient(90deg, var(--color-base-white) 0%, rgba(255, 255, 255, 0) 100%), url("../../img/common/slider-arrow-left.svg");
+  }
+
+  &:active {
+    background-image: linear-gradient(90deg, var(--color-alt-primary-opacity-25) 0%, rgba(120, 89, 207, 0) 100%), url("../../img/common/slider-arrow-left.svg");
+  }
+}
+
+.slider__arrow--next {
+  background-image: url("../../img/common/slider-arrow-right.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  right: 0;
+
+  &:hover {
+    background-image: linear-gradient(270deg, var(--color-base-white) 0%, rgba(255, 255, 255, 0) 100%), url("../../img/common/slider-arrow-right.svg");
+  }
+
+  &:focus {
+    outline: none;
+    background-image: linear-gradient(270deg, var(--color-base-white) 0%, rgba(255, 255, 255, 0) 100%), url("../../img/common/slider-arrow-right.svg");
+  }
+
+  &:active {
+    background-image: linear-gradient(270deg, var(--color-alt-primary-opacity-25) 0%, rgba(120, 89, 207, 0) 100%), url("../../img/common/slider-arrow-right.svg");
+  }
 }
