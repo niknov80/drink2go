@@ -1,31 +1,48 @@
+@use "../global/breakpoints" as *;
+
 .card {
-  display: grid;
-  grid-template-columns: 1fr 1fr ;
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 1fr 1fr;
   background-color: var(--color-base-white);
-  padding: 20px;
-  align-items: center;
+  padding: 35px 20px 20px;
+  align-items: start;
+
+  @media (min-width: $tablet-width) {
+    padding: 50px 30px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 45px 30px 30px;
+  }
 }
 
 .card__title {
-  grid-column: 1 / 3;
   margin-top: 0;
+  margin-bottom: 5px;
 }
 
 .card__picture {
-  grid-column: 1 / 3;
   text-align: center;
   order: -1;
+  margin-bottom: 20px;
+  align-self: center;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 25px;
+  }
 }
 
 .card__description {
-  grid-column: 1 / 3;
   margin-top: 0;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 25px;
+  }
 }
 
-.card__price {
-  grid-column: 1 / 2;
-}
-
-.card__button {
-  grid-column: 2 / 3;
+.card__block {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }

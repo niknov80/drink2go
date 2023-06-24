@@ -1,7 +1,14 @@
+@use "../global/breakpoints" as *;
+
 .pagination {
   display: flex;
   justify-content: space-between;
   width: 100%;
+
+  @media (min-width: $tablet-width) {
+    justify-content: end;
+    gap: 20px;
+  }
 }
 
 .pagination__pages {
@@ -18,10 +25,36 @@
   justify-content: center;
   align-items: center;
 
+  &:hover {
+    background-color: var(--color-alt-primary-lighter);
+    color: var(--color-base-white);
+  }
+
+  &:focus {
+    outline: none;
+    background-color: var(--color-alt-primary-lighter);
+    color: var(--color-base-white);
+  }
+
+  &:active {
+    background-color: var(--color-alt-primary-darker);
+  }
+
+  &:disabled {
+    background-color: var(--color-alt-light-grey);
+  }
+
   &--current {
     background-color: transparent;
     color: var(--color-base-black);
     font-weight: 600;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+      color: var(--color-base-black);
+    }
   }
 
   &--button {
@@ -31,5 +64,57 @@
 
   &--page {
     width: 40px;
+  }
+}
+
+.pagination__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-base-white);
+  text-decoration: none;
+  color: var(--color-base-primary);
+
+  @media (min-width: $tablet-width) {
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &:hover {
+    background-color: var(--color-alt-primary-lighter);
+    color: var(--color-base-white);
+  }
+
+  &:focus {
+    outline: none;
+    background-color: var(--color-alt-primary-lighter);
+    color: var(--color-base-white);
+  }
+
+  &:active {
+    background-color: var(--color-alt-primary-darker);
+  }
+
+  &:disabled {
+    background-color: var(--color-alt-ll);
+  }
+}
+
+.pagination__icon {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+
+.pagination__text {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
   }
 }

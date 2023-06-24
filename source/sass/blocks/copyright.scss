@@ -6,4 +6,17 @@
   line-height: 16px;
   color: var(--color-base-grey);
   gap: 5px;
+
+  &:hover {
+    color: var(--color-base-primary);
+  }
+
+  &:focus {
+    outline: none;
+    color: var(--color-base-primary);
+  }
+
+  &:active {
+    color: var(--color-alt-primary-darker);
+  }
 }

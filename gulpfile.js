@@ -86,8 +86,7 @@ export function copyAssets () {
   return gulp.src([
     'source/fonts/**/*.{woff2,woff}',
     'source/*.ico',
-    'source/*.webmanifest',
-    'source/vendor/**/*.*',
+    'source/*.webmanifest'
   ], {
     base: 'source'
   })

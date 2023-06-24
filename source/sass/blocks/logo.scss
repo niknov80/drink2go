@@ -2,13 +2,13 @@
 
 .logo {
   display: grid;
-  grid-template-columns: 170px 130px;
-  column-gap: 20px;
+  grid-template-columns: 100px;
   align-items: center;
-}
 
-.logo__img {
-
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 170px 130px;
+    column-gap: 20px;
+  }
 }
 
 .logo__wordmark {

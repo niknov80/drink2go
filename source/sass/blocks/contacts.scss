@@ -1,8 +1,14 @@
+@use "../global/breakpoints" as *;
+
 .contacts {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  gap: 12px;
+  gap: 20px;
+
+  @media (min-width: $desktop-width) {
+    padding-top: 0;
+  }
 }
 
 .contacts__wrapper {
@@ -23,7 +29,8 @@
 
 .contacts__text {
   display: flex;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   gap: 6px;
   font-size: 14px;
   line-height: 20px;
@@ -36,4 +43,9 @@
     text-decoration: none;
     color: var(--color-base-black);
   }
+}
+
+.contacts__icon {
+  width: 20px;
+  height: 16px;
 }
