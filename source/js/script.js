@@ -7,27 +7,50 @@ toggleClickHandler();
 arrowClickHandler();
 
 const initSortElement = document.querySelector('.sort__item--init');
-const sortLinksListElement = document.querySelectorAll('.sort__link');
-const sortItemsListElement = document.querySelectorAll('.sort__item');
-const currentSortLinkElement = document.querySelector('.sort__link--current');
-const currentSortItemElement = document.querySelector('.sort__item--current');
-
-const deleteCurrentSort = () => {
-  sortItemsListElement.forEach((sortItem) => {
-    sortItem.classList.remove('sort__item--current');
-    sortItem.childNode.classList
-
-  })
-}
+const dropdownElement = document.querySelector('.sort__dropdown');
+const defaultSortElement = dropdownElement.querySelector('#default');
+const expensiveSortElement = dropdownElement.querySelector('#expensive');
+const cheapSortElement = dropdownElement.querySelector('#cheap');
+const topSortElement = dropdownElement.querySelector('#top');
 
 const sortItemClickHandler = () => {
-  sortLinksListElement.forEach((sortItem) => {
-    sortItem.addEventListener('click', (e) => {
-      e.preventDefault();
-      deleteCurrentSort();
-      console.log(e.target.classList.add('sort__link--current'));
-    })
-  })
+  dropdownElement.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    switch (evt.target.id) {
+      case ('expensive'):
+        defaultSortElement.classList.remove('sort__link--current');
+        expensiveSortElement.classList.add('sort__link--current');
+        cheapSortElement.classList.remove('sort__link--current');
+        topSortElement.classList.remove('sort__link--current');
+        initSortElement.firstChild.textContent = expensiveSortElement.textContent;
+        console.log('expensive');
+        break;
+      case ('cheap'):
+        defaultSortElement.classList.remove('sort__link--current');
+        expensiveSortElement.classList.remove('sort__link--current');
+        cheapSortElement.classList.add('sort__link--current');
+        topSortElement.classList.remove('sort__link--current');
+        initSortElement.firstChild.textContent = cheapSortElement.textContent;
+        console.log('cheap');
+        break;
+      case ('top'):
+        defaultSortElement.classList.remove('sort__link--current');
+        expensiveSortElement.classList.remove('sort__link--current');
+        cheapSortElement.classList.remove('sort__link--current');
+        topSortElement.classList.add('sort__link--current');
+        initSortElement.firstChild.textContent = topSortElement.textContent;
+        console.log('top');
+        break;
+      default:
+        defaultSortElement.classList.add('sort__link--current');
+        expensiveSortElement.classList.remove('sort__link--current');
+        cheapSortElement.classList.remove('sort__link--current');
+        topSortElement.classList.remove('sort__link--current');
+        initSortElement.firstChild.textContent = defaultSortElement.textContent;
+        console.log('default');
+        break;
+    }
+  });
 }
 
 sortItemClickHandler();

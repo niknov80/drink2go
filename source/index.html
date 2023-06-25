@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <title>Интернет-магазин кофейных напитков</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="preload" href="fonts/montserrat-regular.woff2" as="font">
-  <link rel="preload" href="fonts/montserrat-medium.woff2" as="font">
-  <link rel="preload" href="fonts/montserrat-semibold.woff2" as="font">
-  <link rel="preload" href="fonts/montserrat-bold.woff2" as="font">
-  <link rel="preload" href="fonts/montserrat-extrabold.woff2" as="font">
+  <link rel="preload" href="fonts/montserrat-regular.woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/montserrat-medium.woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/montserrat-semibold.woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/montserrat-bold.woff2" as="font" crossorigin>
   <link rel="icon" href="favicon.ico">
   <link rel="icon" type="image/png" href="image/favicon.png">
   <link rel="stylesheet" href="css/style.css">
@@ -176,7 +175,7 @@
           <fieldset class="filter__fieldset filter__fieldset--price">
             <legend class="filter__caption">Цена</legend>
             <div class="filter__range">
-              <div class="filter__range-bar" style="left: 0px; width: 95%">
+              <div class="filter__range-bar" style="left: 0; width: 95%">
                 <button class="filter__range-toggle filter__range-toggle--min" type="button">
                   <span class="visually-hidden">Изменить минимальную цену.</span>
                 </button>
@@ -262,17 +261,17 @@
         <ul class="sort__list">
           <li class="sort__item sort__item--init" tabindex="0">по умолчанию
             <ul class="sort__dropdown">
-              <li class="sort__item sort__item--current">
-                <a class="sort__link sort__link--current" href="http://localhost:3000/index.html?sort=default">По умолчанию</a>
+              <li class="sort__item">
+                <a id="default" class="sort__link sort__link--current" href="http://localhost:3000/index.html?sort=default">По умолчанию</a>
               </li>
               <li class="sort__item">
-                <a class="sort__link" href="http://localhost:3000/index.html?sort=expensive">Сначала дорогие</a>
+                <a id="expensive" class="sort__link" href="http://localhost:3000/index.html?sort=expensive">Сначала дорогие</a>
               </li>
               <li class="sort__item">
-                <a class="sort__link" href="http://localhost:3000/index.html?sort=cheap">Сначала дешёвые</a>
+                <a id="cheap" class="sort__link" href="http://localhost:3000/index.html?sort=cheap">Сначала дешёвые</a>
               </li>
               <li class="sort__item">
-                <a class="sort__link" href="http://localhost:3000/index.html?sort=top">Высокий рейтинг</a>
+                <a id="top" class="sort__link" href="http://localhost:3000/index.html?sort=top">Высокий рейтинг</a>
               </li>
             </ul>
           </li>
@@ -281,10 +280,10 @@
       <div class="catalog__card-list card-list">
         <h3 class="visually-hidden">Список напитков:</h3>
         <article class="card">
-          <h4 class="card__title subtitle">Декаф Флэт Уайт</h4>2
+          <h4 class="card__title subtitle">Декаф Флэт Уайт</h4>
           <picture class="card__picture">
             <source srcset="img/content/card-image-1@1x.webp 1x, img/content/card-image-1@2x.webp 2x" type="image/webp">
-            <img class="card__img" width="130" height="188" src="img/content/card-image-1@1x.jpg 1X" srcset="img/content/card-image-1@2x.jpg 2X" alt="Банка кофе Decafe Flat White">
+            <img class="card__img" width="130" height="188" src="img/content/card-image-1@1x.jpg" srcset="img/content/card-image-1@2x.jpg 2x" alt="Банка кофе Decafe Flat White">
           </picture>
           <p class="card__description small-text">Кофе без кофеина из&nbsp;Эфиопии с&nbsp;натуральным фермерским молоком</p>
           <div class="card__block">
@@ -467,7 +466,7 @@
   </div>
   <div class="footer__bottom">
     <div class="copyright">
-      <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
+      <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
         Разработано в <span class="copyright__caption">HTML Academy</span>
         <svg class ="copyright__logo" width="12" height="16" viewBox="0 0 12 16" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" aria-label="Логотип HTMLAcademy">
           <path d="M11.215 5.754 5.972 2.5v-.001H5.97L.785 5.75V1.407L6 .83l5.215.576v4.347Zm-.004.576L9.126 7.623 5.985 5.656l-.006.573 2.685 1.68-.463.288-2.216-1.388-.006.572 1.75 1.095-.413.291-.01.007-1.321-.82-.006.572.867.538-.883.558L.796 6.39l5.175-3.275 5.24 3.216Zm.004 5.441L6 15.038.785 11.771V7.025l5.193 3.255.008.59-3.562-2.233-.005.573 3.576 2.263.01.605-3.576-2.24-.005.573L6 12.675l3.606-2.272V7.957l1.61-1.011v4.825ZM6 0 0 .662v11.58L6 16l6-3.759V.662L6 0Z"/>
